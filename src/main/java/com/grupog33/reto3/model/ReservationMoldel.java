@@ -22,10 +22,10 @@ public class ReservationMoldel {
     @Column(name = "devolition_date")
     private Date devolitionDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_car", nullable = false)
     private CarMoldel car;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_client", nullable = false)
     private ClientMoldel client;
 

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Client")
@@ -24,4 +25,10 @@ public class ClientMoldel {
     private byte age;
     @Column(length = 250)
     private String name;
+
+    @OneToMany(cascade = CascadeType.MERGE)
+    private List<MessageMoldel> messages;
+
+    @OneToMany(cascade = CascadeType.MERGE)
+    private List<ReservationMoldel> reservations;
 }

@@ -24,5 +24,7 @@ public class GamaMoldel {
     @Column(length = 250)
     private String description;
 
+    @OneToMany(cascade = CascadeType.MERGE)
+    private List<CarMoldel> cars;
 
 }

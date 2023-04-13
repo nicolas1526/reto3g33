@@ -20,10 +20,10 @@ public class MessageMoldel {
     @Column(name = "message_text")
     private String messageText;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_car", nullable = false)
     private CarMoldel car;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_client", nullable = false)
     private ClientMoldel client;
 

@@ -18,7 +18,7 @@ public class ScoreMoldel {
     private int idScore;
     private Float value;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_reservation", unique = true, nullable = false)
     private ReservationMoldel reservation;
 
