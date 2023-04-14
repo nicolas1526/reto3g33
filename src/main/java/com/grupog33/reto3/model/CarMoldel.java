@@ -32,9 +32,9 @@ public class CarMoldel {
     @JsonIgnoreProperties("cars")
     private GamaMoldel gama;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
     private List<MessageMoldel> messages;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
     private List<ReservationMoldel> reservations;
 }

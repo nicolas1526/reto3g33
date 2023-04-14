@@ -25,6 +25,7 @@ public class MessageMoldel {
     @JoinColumn(name = "id_car", nullable = false)
     @JsonIgnoreProperties({"messages","reservations"})
     private CarMoldel car;
+
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_client", nullable = false)
     @JsonIgnoreProperties({"messages","reservations"})

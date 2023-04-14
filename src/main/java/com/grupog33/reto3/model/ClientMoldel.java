@@ -26,9 +26,9 @@ public class ClientMoldel {
     @Column(length = 250)
     private String name;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "client")
     private List<MessageMoldel> messages;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "client")
     private List<ReservationMoldel> reservations;
 }
