@@ -27,7 +27,7 @@ public class ReservationMoldel {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_car", nullable = false)
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JsonIgnoreProperties({"reservations"})
     private CarMoldel car;
 
     @ManyToOne(cascade = CascadeType.MERGE)
@@ -35,4 +35,6 @@ public class ReservationMoldel {
     @JsonIgnoreProperties({"messages","reservations"})
     private ClientMoldel client;
 
+    @OneToOne(cascade = CascadeType.MERGE, mappedBy = "reservation")
+    private ScoreMoldel score;
 }

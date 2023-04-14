@@ -33,6 +33,7 @@ public class CarMoldel {
     private GamaMoldel gama;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
+    @JsonIgnoreProperties({"car","client"})
     private List<MessageMoldel> messages;
 
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
