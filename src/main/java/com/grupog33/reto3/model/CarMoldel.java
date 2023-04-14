@@ -1,5 +1,6 @@
 package com.grupog33.reto3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class CarMoldel {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_gama", nullable = false)
+    @JsonIgnoreProperties("cars")
     private GamaMoldel gama;
 
     @OneToMany(cascade = CascadeType.MERGE)
