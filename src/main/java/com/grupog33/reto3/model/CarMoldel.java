@@ -26,16 +26,13 @@ public class CarMoldel {
     private int year;
     @Column(length = 250)
     private String description;
-
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_gama", nullable = false)
     @JsonIgnoreProperties("cars")
     private GamaMoldel gama;
-
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
     @JsonIgnoreProperties({"car","client"})
     private List<MessageMoldel> messages;
-
     @OneToMany(cascade = CascadeType.MERGE, mappedBy = "car")
     private List<ReservationMoldel> reservations;
 }
